@@ -1,0 +1,16 @@
+{
+  "name": "e2e-delivery-blocked",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Small Express tag service for end-to-end testing of test delivery",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
