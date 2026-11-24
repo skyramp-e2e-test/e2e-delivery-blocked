@@ -13,6 +13,12 @@ function createApp({ itemsUrl }) {
 
   app.get('/api/tags', (_req, res) => res.json(tags));
 
+  app.get('/api/tags/:id', (req, res) => {
+    const tag = tags.find((t) => t.id === Number(req.params.id));
+    if (!tag) return res.status(404).json({ error: 'Tag not found' });
+    res.json(tag);
+  });
+
   app.post('/api/tags', (req, res) => {
     const name = typeof req.body.name === 'string' ? req.body.name.trim() : '';
     if (!name) return res.status(400).json({ error: 'name is required' });

@@ -8,6 +8,7 @@ Used by UC-13.2: the test adds a ruleset that blocks Testbot's `skyramp-testbot/
 | --- | --- |
 | `GET /health` | Health check |
 | `GET /api/tags` | JSON list of tags (kept in memory) |
+| `GET /api/tags/:id` | One tag, or `404` |
 | `POST /api/tags` | Create a tag. Body: `{"name": "..."}`. Returns `201`, or `400` if `name` is missing |
 | `GET /api/overview` | Number of tags, and of items in e2e-pr-app. Returns `502` if that app can't be reached |
 
