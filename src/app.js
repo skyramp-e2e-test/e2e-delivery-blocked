@@ -16,6 +16,7 @@ function createApp({ itemsUrl }) {
   app.post('/api/tags', (req, res) => {
     const name = typeof req.body.name === 'string' ? req.body.name.trim() : '';
     if (!name) return res.status(400).json({ error: 'name is required' });
+    if (name.length > 50) return res.status(400).json({ error: 'name is too long' });
     const tag = { id: nextId++, name };
     tags.push(tag);
     res.status(201).json(tag);
